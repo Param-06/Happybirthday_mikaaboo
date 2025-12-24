@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Mikaaboo 💜</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+}
+
+/* GENERAL */
+section {
+    padding: 70px 20px;
+    backdrop-filter: blur(4px);
+}
+
+h1, h2 { margin-bottom: 10px; }
+
+button {
+    padding: 12px 26px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background: #c77dff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover { transform: scale(1.05); }
+
+/* POPUP */
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: linear-gradient(135deg, #7b2cbf, #c77dff);
+    padding: 30px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 0 40px rgba(199,125,255,0.6);
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* HEART */
+.heart-container {
+    position: relative;
+    width: 220px;
+    height: 200px;
+    margin: 60px auto;
+}
+
+.heart {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    background: #ff4d6d;
+    left: 60px;
+    top: 40px;
+    transform: rotate(-45deg);
+    animation: pulse 2s infinite;
+    z-index: 2;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    background: #ff4d6d;
+    border-radius: 50%;
+}
+
+.heart::before { top: -50px; left: 0; }
+.heart::after { left: 50px; top: 0; }
+
+@keyframes pulse {
+    0% { transform: scale(1) rotate(-45deg); }
+    50% { transform: scale(1.1) rotate(-45deg); }
+    100% { transform: scale(1) rotate(-45deg); }
+}
+
+/* FIREFLIES */
+.firefly {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ffd6ff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255,214,255,0.9);
+    animation: float 4s infinite ease-in-out;
+    opacity: 0.85;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* MESSAGE */
+.hidden-text {
+    display: none;
+    max-width: 650px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 1.7;
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 18px;
+}
+
+/* MEMORY */
+.timeline {
+    max-width: 750px;
+    margin: auto;
+    text-align: left;
+}
+
+.memory {
+    background: rgba(255,255,255,0.15);
+    padding: 18px 22px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* COUNTDOWN */
+#countdown {
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 20px 35px;
+    border-radius: 22px;
+    font-size: 26px;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h1>🎉 Happy Birthday Mikaaboo 💜</h1>
+        <p>
+            21 already huh…<br>
+            officially old enough to complain about being old 😌🎂
+        </p>
+        <button onclick="closePopup()">Open Your Surprise ✨</button>
+    </div>
+</div>
+
+<!-- HEART + FIREFLIES -->
+<section>
+    <h2>21 Wishes, One Heart 💖</h2>
+    <div class="heart-container" id="heartArea">
+        <div class="heart"></div>
+    </div>
+</section>
+
+<!-- MESSAGE -->
+<section>
+    <h2>A Message From My Heart 💌</h2>
+    <button onclick="revealText()">Reveal Message</button>
+
+    <div class="hidden-text" id="message">
+        Happy Birthday, my love ❤️<br><br>
+        Even though we have only been together for a few months, u have already become such an important part of my life<br>
+        I’m truly grateful that I met you,u make my days brighter, my smiles easier, nd my heart warmer, even from miles away <br>
+        Distance isn’t easy, but u make it worth it every single day<br>
+        I miss u more than words can explain nd i can't wait for the day i get to celebrate u in person
+    </div>
+</section>
+
+<!-- MEMORY LANE -->
+<section>
+    <h2>Our Memory Lane 🛤️</h2>
+    <div class="timeline">
+
+        <div class="memory" style="text-align:center;">
+            <strong>Our Song 🎶</strong><br><br>
+            <audio controls preload="metadata" style="width:100%; max-width:320px;">
+                <source src="enna-sona.mp3" type="audio/mpeg">
+            </audio>
+            <p style="margin-top:14px; font-size:14px; opacity:0.9;">
+                Press play whenever you feel like it 🌙
+            </p>
+        </div>
+
+        <div class="memory">
+            <strong>How We Met 💫</strong><br>
+            Somewhere between club recruitments and random conversations,
+            we slowly found our way closer to each other
+            turning something unexpected into something unforgettable.
+        </div>
+
+        <div class="memory">
+            <strong>My Favourite Thing With You 🌙</strong><br>
+            Those quiet night walks, where the world feels softer and time slows down.
+            Just us, talking about everything and nothing.
+        </div>
+
+        <div class="memory">
+            <strong>Why You Mean So Much to Me ❤️</strong><br>
+            You’re my comfort on the hard days and my happiness on the good ones.
+            With you, even the quiet moments feel special, and the chaos feels easier to handle.
+            Loving you feels natural, safe, and right like something my heart always knew it was waiting for.
+            I wouldn’t trade what we have for anything in this world.
+        </div>
+
+    </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section>
+    <h2>Cant wait until we meet again 💞</h2>
+    <p>31st December • 8:00 AM</p>
+    <div id="countdown"></div>
+    <p style="margin-top:20px;">Every second brings me closer to you ❤️</p>
+</section>
+
+<script>
+/* POPUP */
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+/* MESSAGE */
+function revealText() {
+    document.getElementById('message').style.display = 'block';
+}
+
+/* COUNTDOWN */
+const meetDate = new Date("December 31, 2025 08:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const dist = meetDate - now;
+
+    if (dist < 0) {
+        document.getElementById("countdown").innerHTML = "We’re together now ❤️";
+        return;
+    }
+
+    const d = Math.floor(dist / (1000 * 60 * 60 * 24));
+    const h = Math.floor((dist / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((dist / (1000 * 60)) % 60);
+    const s = Math.floor((dist / 1000) % 60);
+
+    document.getElementById("countdown").innerHTML =
+        `${d}d ${h}h ${m}m ${s}s`;
+}, 1000);
+
+/* CREATE 21 FIREFLIES */
+const heartArea = document.getElementById("heartArea");
+
+for (let i = 0; i < 21; i++) {
+    const firefly = document.createElement("div");
+    firefly.className = "firefly";
+    firefly.style.left = Math.random() * 200 + "px";
+    firefly.style.top = Math.random() * 180 + "px";
+    firefly.style.animationDelay = Math.random() * 4 + "s";
+    heartArea.appendChild(firefly);
+}
+</script>
+
+</body>
+</html>
